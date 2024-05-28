@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ chart_type.capitalize() }} Chart - {{ filename }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        h5 {
+            color: #333;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .btn-secondary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        select, button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Back to Uploaded Files</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        <h5>Filename: {{ filename }}</h5> <!-- Display the filename here -->
+
+        {% if chart_path %}
+            <a href="{{ url_for('download_chart', filename=chart_path) }}" download>
+                <button type="button" id="downloadChart" class="btn btn-success mr-2">Download {{ chart_type.capitalize() }} Chart</button>
+            </a>
+            <a href="{{ url_for('view_chart', chart_type=chart_type, filename=filename) }}" class="btn btn-secondary">Back to Category</a>
+            <br>
+            <br>
+            <canvas id="pieChart" width="400" height="400"></canvas>
+        {% endif %}
+
+        <h1 class="mt-4">{{ chart_type.capitalize() }} Chart</h1>
+
+        <form method="POST" action="{{ url_for('view_chart', chart_type=chart_type, filename=filename) }}">
+            <label for="selected_column">Select a column for the {{ chart_type }} chart:</label>
+            <select name="selected_column" id="selected_column">
+                {% for column in columns %}
+                    <option value="{{ column }}">{{ column }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary mt-2">Generate {{ chart_type.capitalize() }} Chart</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (place these at the end of the body) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Retrieve the canvas element
+        var ctx = document.getElementById('pieChart').getContext('2d');
+    
+        // Parse the JSON-encoded data from Flask variables
+        var labels = JSON.parse('{{ pie_chart_labels|tojson|safe }}');
+        var data = JSON.parse('{{ pie_chart_data|tojson|safe }}');
+    
+        // Create a pie chart using Chart.js
+        var pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true
+            }
+        });
+    
+        // Function to download the chart as an image
+        document.getElementById('downloadChart').addEventListener('click', function() {
+            var url = document.getElementById('pieChart').toDataURL('image/png');
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = 'pie_chart.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+    
+
+</body>
+</html>
