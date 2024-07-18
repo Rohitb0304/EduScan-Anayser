@@ -24,11 +24,11 @@ Download and install the latest version of Python from the official website: [ht
 - **macOS**: Use Homebrew to install Tesseract:
   ```sh
   brew install tesseract
-  
+  ```
 - **Linux**: Use the package manager to install Tesseract:
   ```sh
   sudo apt-get install tesseract-ocr
-  
+  ```
 
 ### Step 3: Set Up the Project
 
@@ -37,18 +37,18 @@ Download and install the latest version of Python from the official website: [ht
 2. **Navigate to the Project Directory**:
    ```sh
    cd <project-directory>
-   
+   ```
 
 3. **Create a Virtual Environment** (optional but recommended):
    ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   
+   ```
 
 4. **Install Required Python Packages**:
    ```sh
    pip install -r requirements.txt
-   
+   ```
 
 ### Step 4: Run the Application
 
