@@ -1,15 +1,3 @@
-## `requirements.txt`
-
-```plaintext
-pytesseract==0.3.10
-Pillow==9.1.1
-Flask==2.1.1
-pandas==1.4.2
-matplotlib==3.5.2
-pdf2image==1.16.0
-chardet==5.0.0
-```
-
 ## `README.md`
 
 ```markdown
