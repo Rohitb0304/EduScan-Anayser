@@ -1,71 +1,90 @@
+Sure, here's the properly formatted `README.md` with all steps correctly inside the markdown view:
+
+## `README.md`
+
 ```markdown
-# Marksheet Extractor - Python Flask Application
+# Marksheet Text Extraction and Processing
 
-This application is designed to extract text from marksheets (image or PDF format) and process it to retrieve relevant information like student details, course names, and grades. It utilizes Flask for building the web interface and various libraries for image processing and text extraction.
+This project extracts and processes text from marksheets using OCR (Optical Character Recognition) and stores the processed data into a CSV file.
 
-## Prerequisites:
+## Prerequisites
 
-- Python 3.7 or later (download from [https://www.python.org/downloads/](https://www.python.org/downloads/))
-- pip (package installer for Python, usually included with Python)
+- Python 3.x
+- pip (Python package installer)
 
-## Installation Instructions:
+## Installation
 
-### Linux/macOS:
+### Step 1: Install Python
 
-1. Open a terminal window.
-2. Install Python and pip, if not already present (refer to Python's download page for specific instructions).
-3. Create a virtual environment to isolate dependencies (recommended, but optional):
-   ```bash
-   python3 -m venv my_env
-   source my_env/bin/activate  # Activate the virtual environment
+Download and install the latest version of Python from the official website: [https://www.python.org/downloads/](https://www.python.org/downloads/).
+
+### Step 2: Install Tesseract OCR
+
+- **Windows**: Download the Tesseract installer from [here](https://github.com/UB-Mannheim/tesseract/wiki). Run the installer and add Tesseract to your system path.
+- **macOS**: Use Homebrew to install Tesseract:
+  ```sh
+  brew install tesseract
+  ```
+- **Linux**: Use the package manager to install Tesseract:
+  ```sh
+  sudo apt-get install tesseract-ocr
+  ```
+
+### Step 3: Set Up the Project
+
+1. **Clone the Repository** (if applicable) or Download the project files.
+
+2. **Navigate to the Project Directory**:
+   ```sh
+   cd <project-directory>
    ```
-4. Install the required packages using the `requirements.txt` file:
-   ```bash
+
+3. **Create a Virtual Environment** (optional but recommended):
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+4. **Install Required Python Packages**:
+   ```sh
    pip install -r requirements.txt
    ```
 
-### Windows:
+### Step 4: Run the Application
 
-1. Download and install Python from [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/) (ensure "Add Python 3.x to PATH" is checked during installation).
-2. Open a command prompt window.
-3. Create a virtual environment (recommended, but optional):
-   ```bash
-   python -m venv my_env
-   my_env\Scripts\activate.bat  # Activate the virtual environment
+To run the application and extract text from a marksheet image:
+
+1. Place the marksheet image in the `Autonomous` directory.
+
+2. Modify the `image_path` variable in the script to point to your image file.
+
+3. Run the script:
+   ```sh
+   python <script_name>.py
    ```
-4. Install the required packages using the `requirements.txt` file:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-## Running the Application:
+## Usage
 
-(Specific instructions will depend on your application's structure. Here's a general example.)
+The script processes the image, extracts relevant details, and saves them in a CSV file located in the `Autonomous/output-result/` directory. Ensure that you have the necessary permissions to read/write files in this directory.
 
-1. Make sure you're in the directory containing your Flask application's main Python file (often named `app.py`).
-2. Run the application using `flask run`:
-   ```bash
-   flask run
-   ```
-3. This will start the Flask development server, usually accessible at http://127.0.0.1:5000/ in your web browser.
+## Notes
 
-## Additional Notes:
+- Ensure that the marksheet image is in a supported format (`.jpg`, `.jpeg`, `.png`).
+- Adjust the regular expressions in the `process_marksheet` function if the structure of the marksheet text changes.
 
-- **pytesseract Dependencies:** pytesseract requires additional downloads for specific languages to improve accuracy. Follow the instructions on the pytesseract project page ([invalid URL removed]) to set up language support.
-- **Flask App Structure:** The specific structure of your Flask application will determine how to interact with it. This guide provides a general overview of running a Flask application.
+## Troubleshooting
 
-## requirements.txt
+- **Tesseract Not Found**: Ensure Tesseract is installed and added to your system's PATH.
+- **Missing Modules**: Ensure all required modules are installed by running `pip install -r requirements.txt`.
+- **Permissions Issues**: Ensure you have read/write permissions for the directories where images and CSV files are located.
 
-Here's the content you need to create a separate file named `requirements.txt` in the same directory as your README.md:
+## Contributing
 
-```
-Flask==2.2.3  # Core web framework
-Werkzeug==2.2.3  # Dependency for Flask (included in Flask installation)
-pytesseract==0.0.9  # Optical Character Recognition (OCR) library
-Pillow==9.4.0  # Image processing library
-pdf2image==0.19.5  # PDF to image conversion library
-pandas==1.5.2  # Data analysis and manipulation library (optional for CSV output)
-matplotlib==3.6.2  # Visualization library (optional for CSV output)
+Feel free to submit issues or pull requests to improve this project.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 ```
 
-Remember to replace `my_env` with the name you choose for your virtual environment (if using one).
+You can now copy and paste the entire content above into your `README.md` file, and all steps will be correctly formatted within the markdown view.
