@@ -1,3 +1,5 @@
+Sure, here's the properly formatted `README.md` with all steps correctly inside the markdown view:
+
 ## `README.md`
 
 ```markdown
@@ -22,11 +24,11 @@ Download and install the latest version of Python from the official website: [ht
 - **macOS**: Use Homebrew to install Tesseract:
   ```sh
   brew install tesseract
-  ```
+  
 - **Linux**: Use the package manager to install Tesseract:
   ```sh
   sudo apt-get install tesseract-ocr
-  ```
+  
 
 ### Step 3: Set Up the Project
 
@@ -35,18 +37,18 @@ Download and install the latest version of Python from the official website: [ht
 2. **Navigate to the Project Directory**:
    ```sh
    cd <project-directory>
-   ```
+   
 
 3. **Create a Virtual Environment** (optional but recommended):
    ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+   
 
 4. **Install Required Python Packages**:
    ```sh
    pip install -r requirements.txt
-   ```
+   
 
 ### Step 4: Run the Application
 
@@ -85,4 +87,4 @@ Feel free to submit issues or pull requests to improve this project.
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 ```
 
-You can copy and paste the above content directly into your `README.md` file. It includes all necessary installation instructions for Windows, macOS, and Linux, formatted correctly for ease of use.
+You can now copy and paste the entire content above into your `README.md` file, and all steps will be correctly formatted within the markdown view.
