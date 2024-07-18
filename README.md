@@ -1,8 +1,3 @@
-Sure, here's the properly formatted `README.md` with all steps correctly inside the markdown view:
-
-## `README.md`
-
-```markdown
 # Marksheet Text Extraction and Processing
 
 This project extracts and processes text from marksheets using OCR (Optical Character Recognition) and stores the processed data into a CSV file.
@@ -22,33 +17,33 @@ Download and install the latest version of Python from the official website: [ht
 
 - **Windows**: Download the Tesseract installer from [here](https://github.com/UB-Mannheim/tesseract/wiki). Run the installer and add Tesseract to your system path.
 - **macOS**: Use Homebrew to install Tesseract:
-  ```sh
-  brew install tesseract
-  ```
+    ```bash
+    brew install tesseract
+    ```
 - **Linux**: Use the package manager to install Tesseract:
-  ```sh
-  sudo apt-get install tesseract-ocr
-  ```
+    ```bash
+    sudo apt-get install tesseract-ocr
+    ```
 
 ### Step 3: Set Up the Project
 
 1. **Clone the Repository** (if applicable) or Download the project files.
 
 2. **Navigate to the Project Directory**:
-   ```sh
-   cd <project-directory>
-   ```
+    ```bash
+    cd <project-directory>
+    ```
 
 3. **Create a Virtual Environment** (optional but recommended):
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
 
 4. **Install Required Python Packages**:
-   ```sh
-   pip install -r requirements.txt
-   ```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ### Step 4: Run the Application
 
@@ -59,9 +54,9 @@ To run the application and extract text from a marksheet image:
 2. Modify the `image_path` variable in the script to point to your image file.
 
 3. Run the script:
-   ```sh
-   python <script_name>.py
-   ```
+    ```bash
+    python <script_name>.py
+    ```
 
 ## Usage
 
@@ -85,6 +80,3 @@ Feel free to submit issues or pull requests to improve this project.
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-```
-
-You can now copy and paste the entire content above into your `README.md` file, and all steps will be correctly formatted within the markdown view.
