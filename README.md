@@ -22,9 +22,9 @@ Download and install the latest version of Python from the official website: [ht
 
 - **Windows**: Download the Tesseract installer from [here](https://github.com/UB-Mannheim/tesseract/wiki). Run the installer and add Tesseract to your system path.
 - **macOS**: Use Homebrew to install Tesseract:
-  ```sh
-  brew install tesseract
   ```
+  brew install tesseract
+  ```sh
 - **Linux**: Use the package manager to install Tesseract:
   ```sh
   sudo apt-get install tesseract-ocr
