@@ -19,7 +19,7 @@ Download and install the latest version of Python from the official website: [ht
 ### Step 2: Install Tesseract OCR
 
 - **Windows**: Download the Tesseract installer from [here](https://github.com/UB-Mannheim/tesseract/wiki). Run the installer and add Tesseract to your system path.
-- **MacOS**: Use Homebrew to install Tesseract:
+- **macOS**: Use Homebrew to install Tesseract:
   ```sh
   brew install tesseract
   ```
@@ -85,4 +85,4 @@ Feel free to submit issues or pull requests to improve this project.
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 ```
 
-This `README.md` file provides detailed instructions for setting up and running the project, including prerequisites, installation steps, and troubleshooting tips. The `requirements.txt` file lists all necessary dependencies for the project.
+You can copy and paste the above content directly into your `README.md` file. It includes all necessary installation instructions for Windows, macOS, and Linux, formatted correctly for ease of use.
